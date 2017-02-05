@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="apawviewer">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="apaw viewer">
+    <meta name="author" content="Helias, Yehonal">
+
+    <title>Apaw Viewer</title>
+
+    <!-- Javascript -->
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-ui-router.min.js"></script>
+    <script src="js/lib/angular-animate.js"></script>
+    <script src="js/lib/angular-tablesort.js"></script>
+    <script src="js/lib/ui-bootstrap.min.js"></script>
+    <script src="js/lib/loading-bar.min.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/routes.js"></script>
+    <script src="config.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tablesort.css">
+    <link rel="stylesheet" href="css/loading-bar.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--[if IE]>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+
+          <a href="#/{{ route }}/0/">
+            <p class="h1 text-center">Apaw Viewer</p>
+          </a>
+          <br>
+
+        </div>
+      </div>
+
+      <div class="row" ng-show="multiple_result">
+        <div class="col-xs-6">
+          <input type="text" placeholder="Search..." class="search-input" ng-model="search">
+          <a ng-href="#/{{ route }}/{{ from }}/{{ search }}">
+            <button class="search arrow-right"><span class="glyphicon glyphicon-search"></span></button>
+          </a>
+        </div>
+
+        <div class="col-xs-6">
+          <div class="text-right">
+            <a ng-href="#/{{ route }}/{{ (from - 50 > 0 ? from-50 : 0) }}/{{ search }}">
+              <button class="arrow arrow-left">
+                <i class="pull-right glyphicon glyphicon-chevron-left"></i>
+              </button>
+            </a>
+              <b class="text-align">&nbsp; {{ from + " - " + (from-(-50)) }} &nbsp;</b>
+            <a ng-href="#/{{ route }}/{{ 50-(-from) }}/{{ search }}">
+              <button class="arrow arrow-right">
+                <i class="pull-right glyphicon glyphicon-chevron-right"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="raw">
+        <div class="col-xs-12">
+
+          <div ui-view></div>
+          <hr>
+          <p class="text-center credits">Created by <a target="_blank" href="https://github.com/Helias"><strong>Helias</strong></a> && <a target="_blank" href="https://github.com/Yehonal"><strong>Yehonal</strong></a></p>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
