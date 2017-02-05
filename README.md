@@ -16,6 +16,6 @@ example:
 
 **YOUR_APAW_VIEWER** = http://www.drassil.net/module-apaw-viewer/#/
 
-**YOUR_APAW_ROUTE** is http://your_apaw/route/path/creature/123 with slashes (/) converted in dashes (-) = **your_apaw-route-path-creature-123**
+**YOUR_APAW_ROUTE** is http://your_apaw/realm/route/path/creature/123 with slashes (/) converted in dashes (-) = **realm-route-path-creature-12**
 
-http://www.drassil.net/module-apaw-viewer/#/your_apaw-route-path-creature-123
+http://www.drassil.net/module-apaw-viewer/#/realm-route-path-creature-123
