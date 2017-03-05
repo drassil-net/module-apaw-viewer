@@ -2,7 +2,7 @@
 
 This Apaw Viewer works with [Apaw](https://github.com/azerothcore/apaw.git), the [Azerothcore](https://github.com/azerothcore) API.
 
-[Live Demo](www.drassil.net/module-apaw-viewer/#/)
+[Live Demo](http://www.drassil.net/module-apaw-viewer/#/)
 
 ## Usage
 
