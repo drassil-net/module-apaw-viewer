@@ -41,7 +41,7 @@
     $rootScope.multiple_result = true;
 
     /* Retrieve table content */
-    $http.get(app.api + $rootScope.route.replace(/-/g, "/") + "?from=" + $rootScope.from + "&search=" + $rootScope.name)
+    $http.get(app.api + $rootScope.route.replace(/-/g, "/") + "?from=" + $rootScope.from + "&search=" + $rootScope.search)
       .success(function(data, status, header, config) {
         if (Array.isArray(data)) {
           $scope.result = data;
