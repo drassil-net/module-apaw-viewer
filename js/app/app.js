@@ -36,10 +36,7 @@
 
     $rootScope.route = $stateParams.route == null ? '' : $stateParams.route;
     $rootScope.from = $stateParams.from == null ? 0 : $stateParams.from;
-    $rootScope.name = $stateParams.name == null ? '' : $stateParams.name;
-
-    // search field
-    $rootScope.search = $rootScope.name;
+    $rootScope.search = $stateParams.search == null ? '' : $stateParams.search;
 
     $rootScope.multiple_result = true;
 
