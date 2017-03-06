@@ -9,7 +9,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="res in result track by $index" ts-repeat>
+          <tr ng-repeat="res in result track by {attr}" ts-repeat>
             <td ng-class="classes($index)" ng-repeat="(key, value) in res">{{ value }}</td>
           </tr>
         </tbody>
