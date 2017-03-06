@@ -43,6 +43,7 @@
     /* Retrieve table content */
     $http.get(app.api + $rootScope.route.replace(/-/g, "/") + "?from=" + $rootScope.from + "&search=" + $rootScope.search)
       .success(function(data, status, header, config) {
+        console.log(data);
         if (Array.isArray(data)) {
           $scope.result = data;
           $rootScope.multiple_result = true;
