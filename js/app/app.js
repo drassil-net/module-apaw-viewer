@@ -40,9 +40,15 @@
     $rootScope.search = $stateParams.search == null ? '' : $stateParams.search;
 
     $rootScope.multiple_result = true;
+    
+    var route = $rootScope.route.replace(/-/g, "/");
+    
+    $http.get(route+'.json').success(function(response) {
+        $rootScope.title= response.data.title;
+    });
 
     /* Retrieve table content */
-    $http.get(app.api + $rootScope.route.replace(/-/g, "/") + "?from=" + $rootScope.from + "&search=" + $rootScope.search)
+    $http.get(app.api + route + "?from=" + $rootScope.from + "&search=" + $rootScope.search)
       .success(function(data, status, header, config) {
         if (Array.isArray(data)) {
           $scope.result = data;
