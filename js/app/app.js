@@ -42,8 +42,9 @@
     $rootScope.multiple_result = true;
     
     var route = $rootScope.route.replace(/-/g, "/");
+    var baseUrl= $location.$$absUrl;
     
-    $http.get("/app/config/"+route+'.json').success(function(response) {
+    $http.get(baseUrl+"/app/config/"+route+'.json').success(function(response) {
         $rootScope.title= response.data.title;
     });
 
