@@ -43,7 +43,7 @@
     
     var route = $rootScope.route.replace(/-/g, "/");
     
-    $http.get(route+'.json').success(function(response) {
+    $http.get("/app/config/"+route+'.json').success(function(response) {
         $rootScope.title= response.data.title;
     });
 
