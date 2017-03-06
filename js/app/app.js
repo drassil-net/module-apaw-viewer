@@ -42,7 +42,7 @@
     $rootScope.multiple_result = true;
     var baseUrl= $location.$$absUrl;
     
-    $http.get(baseUrl+"/app/config/"+$rootScope.route+'.json').success(function(data, status, header, config) {
+    $http.get("app/config/"+$rootScope.route+'.json').success(function(data, status, header, config) {
         $rootScope.title= data.title;
     });
 
