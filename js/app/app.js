@@ -3,7 +3,7 @@
 
   var app = angular.module('apawviewer', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'ngAnimate', 'tableSort']);
 
-  app.controller('mainController', function($rootScope, $scope, $http, $stateParams) {
+  app.controller('mainController', function($rootScope, $scope, $http, $stateParams, $location) {
 
     $scope.normalizeColName = function(str) {
       var ret= str.charAt(0).toUpperCase() + str.substring(1);
