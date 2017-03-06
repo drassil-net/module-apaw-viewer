@@ -5,11 +5,11 @@
       <table class="table table-striped table-bordered" ts-wrapper>
         <thead>
           <tr class="text-warning">
-            <th ng-repeat="(key, value) in result[0]" ts-criteria="{{key}}|lowercase">{{ upperCaseFirst(key) }}</th>
+            <th ng-repeat="(key, value) in result[0]" ts-criteria="{{key}}|lowercase" ts-default>{{ upperCaseFirst(key) }}</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="res in result" ts-repeat>
+          <tr ng-repeat="res in result track by $index" ts-repeat>
             <td ng-class="classes($index)" ng-repeat="(key, value) in res">{{ value }}</td>
           </tr>
         </tbody>
