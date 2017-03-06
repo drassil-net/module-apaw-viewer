@@ -10,7 +10,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="res in result track by $index" ts-repeat>
-            <td ng-class="classes($index)" ng-repeat="(key, value) in res">{{ value }}</td>
+            <td ng-class="classes($index)" ng-repeat="(key, value) in res">{{ value | strReplace:'_':' ' }}</td>
           </tr>
         </tbody>
       </table>
