@@ -2,20 +2,12 @@
   'use strict';
 
   var app = angular.module('apawviewer', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'ngAnimate', 'tableSort']);
-  
-  app.filter('strReplace', function () {
-    return function (input, from, to) {
-      input = input || '';
-      from = from || '';
-      to = to || '';
-      return input.replace(new RegExp(from, 'g'), to);
-    };
-  });
 
   app.controller('mainController', function($rootScope, $scope, $http, $stateParams) {
 
-    $scope.upperCaseFirst = function(str) {
-      return str.charAt(0).toUpperCase() + str.substring(1);
+    $scope.normalizeColName = function(str) {
+      var ret= str.charAt(0).toUpperCase() + str.substring(1);
+      ret.replace(new RegExp('_', 'g'), ' ');
     };
 
     $scope.classes = function(column) {
