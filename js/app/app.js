@@ -7,7 +7,7 @@
 
     $scope.normalizeColName = function(str) {
       var ret= str.charAt(0).toUpperCase() + str.substring(1);
-      ret.replace(new RegExp('_', 'g'), ' ');
+      return ret.replace(new RegExp('_', 'g'), ' ');
     };
 
     $scope.classes = function(column) {
