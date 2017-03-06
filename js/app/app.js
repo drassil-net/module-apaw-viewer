@@ -44,8 +44,8 @@
     var route = $rootScope.route.replace(/-/g, "/");
     var baseUrl= $location.$$absUrl;
     
-    $http.get(baseUrl+"/app/config/"+route+'.json').success(function(response) {
-        $rootScope.title= response.data.title;
+    $http.get(baseUrl+"/app/config/"+route+'.json').success(function(data, status, header, config) {
+        $rootScope.title= data.title;
     });
 
     /* Retrieve table content */
