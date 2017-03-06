@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var app = angular.module('apawviewer', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'ngAnimate']);
+  var app = angular.module('apawviewer', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'ngAnimate', 'tableSort']);
 
   app.controller('mainController', function($rootScope, $scope, $http, $stateParams) {
 
