@@ -2,6 +2,15 @@
   'use strict';
 
   var app = angular.module('apawviewer', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'ngAnimate', 'tableSort']);
+  
+  app.filter('strReplace', function () {
+    return function (input, from, to) {
+      input = input || '';
+      from = from || '';
+      to = to || '';
+      return input.replace(new RegExp(from, 'g'), to);
+    };
+  });
 
   app.controller('mainController', function($rootScope, $scope, $http, $stateParams) {
 
