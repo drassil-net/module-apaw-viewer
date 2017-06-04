@@ -44,7 +44,7 @@
     
     $http.get("js/app/config/"+$rootScope.route+'.json').success(function(data, status, header, config) {
         $rootScope.title= data.title;
-        $rootScope.description= data.description;
+        $rootScope.description=  $sce.trustAsHtml(data.description);
     });
 
     /* Retrieve table content */
