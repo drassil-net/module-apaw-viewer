@@ -3,7 +3,7 @@
 
   var app = angular.module('apawviewer', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'ngAnimate', 'tableSort']);
 
-  app.controller('mainController', function($rootScope, $scope, $http, $stateParams, $location) {
+  app.controller('mainController', function($rootScope, $scope, $http, $stateParams, $location,$sce) {
 
     $scope.normalizeColName = function(str) {
       var ret= str.charAt(0).toUpperCase() + str.substring(1);
@@ -44,7 +44,7 @@
     
     $http.get("js/app/config/"+$rootScope.route+'.json').success(function(data, status, header, config) {
         $rootScope.title= data.title;
-        $rootScope.description= data.description;
+        $rootScope.description= $sce.trustAsHtml(data.description);
     });
 
     /* Retrieve table content */
